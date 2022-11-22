@@ -1,6 +1,6 @@
 # Objektno orijentirano programiranje u Pythonu
 
-import dataclasses
+
 
 
 class Player():
@@ -25,14 +25,14 @@ class BasketballPlayer(Player):
 
 
 class FootballPlayer():
-    def __init__(self, first_name, last_name, height_cm, weight_kg, points, rebounds, assists):
+    def __init__(self, first_name, last_name, height_cm, weight_kg, goals,y_cards, r_cards, assists):
         self.first_name = first_name
         self.last_name = last_name
         self.height_cm = height_cm
         self.weight_kg = weight_kg
-        self.goals_numbers = goals
-        self.yellow_cards = y_cards
-        self.red_cards = r_cards
+        self.goals = goals
+        self.y_cards = y_cards
+        self.r_cards = r_cards
         self.assists = assists
 
 
@@ -45,9 +45,10 @@ weight = input("Enter player's weight: ")
 goals = input("Enter the number of player's goals: ")
 y_cards = input("Enter the number of player's yellow cards: ")
 r_cards = input("Enter the number of player's red cards: ")
+assists = input("Enter the number of player's assists: ")
 
 new_player = FootballPlayer(first_name=f_name, last_name=l_name, height_cm=float(height), weight_kg=float(weight),
-                            goals_numbers=int(goals), yellow_cards=int(y_cards), red_cards=int(r_cards))
+                            goals=int(goals), y_cards=int(y_cards), r_cards=int(r_cards),assists=int(assists))
 
 with open("football_players.json", "w") as football_file:
     football_file.write(str(new_player.__dict__))

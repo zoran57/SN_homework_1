@@ -4,7 +4,7 @@ import json
 from urllib.request import urlopen
 
 # moj api kljuć
-api_key ="8RR0NCAPGT6SXZ7"
+api_key ="moj api ključ"
 
 response = urlopen('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=BTC&to_currency=USD&apikey=' + api_key).read()
 
